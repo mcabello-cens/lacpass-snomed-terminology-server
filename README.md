@@ -13,7 +13,7 @@ cd snowstorm-7.12.0/
 docker-compose up -d
 ```
 
-**3. Importar SnomedIPS en servidor Snowstorm***
+**3. Importar SnomedIPS en servidor Snowstorm**
 
 3.1 Acceder a interfaz Swagger desde http://<ip>:8080/swagger-ui/index.html#/ y ejecuta siguiente request
 
