@@ -3,7 +3,7 @@
 **1. Clona este repositorio**
 
 ```
-https://github.com/mcabello-cens/lacpass-terminology-server.git
+git clone https://github.com/mcabello-cens/lacpass-terminology-server.git
 ```
 
 **2. Iniciar servidor Snowstorm**
