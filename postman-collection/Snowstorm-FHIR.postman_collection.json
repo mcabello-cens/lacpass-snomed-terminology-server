@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "fe265cee-8d23-49c9-8951-ddf69e36f723",
+		"name": "Snowstorm-FHIR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22668638"
+	},
+	"item": [
+		{
+			"name": "Capabilities of server",
+			"item": [
+				{
+					"name": "metadata",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir}}/metadata",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"metadata"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CodeSystem & operations",
+			"item": [
+				{
+					"name": "get all codesystems from server",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir}}/CodeSystem",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"CodeSystem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get snomedct codesystem",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir}}/CodeSystem?url=http://snomed.info/sct",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"CodeSystem"
+							],
+							"query": [
+								{
+									"key": "url",
+									"value": "http://snomed.info/sct"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lookup for concept CODIV19",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir}}/CodeSystem/$lookup?system=http://snomed.info/sct&code=840539006",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"CodeSystem",
+								"$lookup"
+							],
+							"query": [
+								{
+									"key": "system",
+									"value": "http://snomed.info/sct"
+								},
+								{
+									"key": "code",
+									"value": "840539006"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subsumes for conceptId 427623005 vs 34014006 (is Covid19 a viral disease? )",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir}}/CodeSystem/$subsumes?system=http://snomed.info/sct&codeA=34014006&codeB=840539006",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"CodeSystem",
+								"$subsumes"
+							],
+							"query": [
+								{
+									"key": "system",
+									"value": "http://snomed.info/sct"
+								},
+								{
+									"key": "codeA",
+									"value": "34014006"
+								},
+								{
+									"key": "codeB",
+									"value": "840539006"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ValueSet & operations",
+			"item": [
+				{
+					"name": "get all valuesets from server",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir}}/ValueSet",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"ValueSet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find 'neoplasm liver' from Clinical findings valueset",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir}}/ValueSet/$expand?url=http://snomed.info/sct?fhir_vs=ecl/<404684003&filter=neo liver",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"ValueSet",
+								"$expand"
+							],
+							"query": [
+								{
+									"key": "url",
+									"value": "http://snomed.info/sct?fhir_vs=ecl/<404684003"
+								},
+								{
+									"key": "filter",
+									"value": "neo liver"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all childs concepts from Clinical finding (404684003)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir}}/ValueSet/$expand?url=http://snomed.info/sct?fhir_vs=ecl/<404684003",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"ValueSet",
+								"$expand"
+							],
+							"query": [
+								{
+									"key": "url",
+									"value": "http://snomed.info/sct?fhir_vs=ecl/<404684003"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ConceptMap",
+			"item": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "fhir",
+			"value": "http://172.27.71.142/fhir",
+			"type": "string"
+		},
+		{
+			"key": "ips-fhir",
+			"value": "https://ips-browser.snomedtools.org/fhir",
+			"type": "string"
+		}
+	]
+}
