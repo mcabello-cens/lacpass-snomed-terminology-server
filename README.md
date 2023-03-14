@@ -3,10 +3,27 @@
 **1. Requisitos**
 
 - Servidor 2 nucleos 
-- 16 GB Ram
+- Al menos 8 GB Ram
 - Docker
 - Docker-compose
 
+Como mínimo Snowstorm debe tener 2G y Elasticsearch debe tener 4G de memoria para poder importar un Snapshot y realizar consultas ECL. Elasticsearch funcionará mejor con otros 4G de memoria libre en el servidor para el almacenamiento en caché de disco a nivel de sistema operativo.
+
+Límites de memoria virtual de Docker
+
+Debido a los límites de memoria virtual por defecto establecidos por los sistemas operativos que ahora es demasiado bajo para Elasticsearch y el contenedor Elasticsearch en este despliegue fallará.
+
+En Ubuntu 20.04 en adelante, tendrá que ejecutar el siguiente comando antes de ejecutar docker-compose up :
+
+```
+sudo sysctl -w vm.max_map_count=262144
+```
+
+Si utiliza Windows y WSL2, deberá ejecutar el siguiente comando en Powershell:
+
+```
+wsl -d docker-desktop sysctl -w vm.max_map_count=262144
+```
 
 
 **2. Clonar este repositorio**
