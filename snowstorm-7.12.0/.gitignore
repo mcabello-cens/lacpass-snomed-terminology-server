@@ -1,0 +1,15 @@
+target
+.*
+!.gitignore
+!.travis.yml
+*.iml
+/data
+/release
+/application-*.properties*
+*.log
+/resources
+*.sh
+snomed-drools-rules
+/tmp
+/local*
+authoring-traceability.log*
