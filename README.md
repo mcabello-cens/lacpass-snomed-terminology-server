@@ -1,21 +1,30 @@
 # lacpass-terminology-server
 
-**1. Clona este repositorio**
+**1. Requisitos**
+
+- Servidor 2 nucleos 
+- 16 GB Ram
+- Docker
+- Docker-compose
+
+
+
+**2. Clona este repositorio**
 
 ```
 git clone https://github.com/mcabello-cens/lacpass-terminology-server.git
 ```
 
-**2. Iniciar servidor Snowstorm**
+**3. Iniciar servidor Snowstorm**
 
 ```
 cd snowstorm-7.12.0/
 docker-compose up -d
 ```
 
-**3. Importar SnomedIPS en servidor Snowstorm**
+**4. Importar SnomedIPS en servidor Snowstorm**
 
-3.1 Acceder a interfaz Swagger desde http://<ip>:8080/swagger-ui/index.html#/ y ejecuta siguiente request
+4.1 Acceder a interfaz Swagger desde http://<ip>:8080/swagger-ui/index.html#/ y ejecuta siguiente request
 
 ```
 POST /imports
@@ -26,7 +35,7 @@ POST /imports
 }
 ```
 
-3.2 El ***request*** anterior una respuesta como la que sigue:
+4.2 El ***request*** anterior una respuesta como la que sigue:
 
 ```
 cache-control: no-cache,no-store,max-age=0,must-revalidate 
@@ -42,9 +51,9 @@ cache-control: no-cache,no-store,max-age=0,must-revalidate
  x-xss-protection: 1; mode=block 
 ```
 
-3.3 Copia el UUID generado en la respuesta anterior.
+4.3 Copia el UUID generado en la respuesta anterior.
 
-3.4 Desde la consola ejecutar. Reemplaza el UUID copiado en el ***request***
+4.4 Desde la consola ejecutar. Reemplaza el UUID copiado en el ***request***
 ```
 cd release-snomed-ips/
 
