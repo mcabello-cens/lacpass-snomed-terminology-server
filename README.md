@@ -48,8 +48,11 @@ curl -X POST --header 'Content-Type: multipart/form-data' --header 'Accept: appl
 ```
 
 **Notas:**
+
 El proceso de importacion toma alrededor de 25 segundos.
+
 SnomedIPS esta configurado para ser cargado en el branch MAIN. 
+
 No es factible aún levantarlo en una rama distinta.
 
 
