@@ -9,7 +9,7 @@
 
 
 
-**2. Clona este repositorio**
+**2. Clonar este repositorio**
 
 ```
 git clone https://github.com/mcabello-cens/lacpass-terminology-server.git
