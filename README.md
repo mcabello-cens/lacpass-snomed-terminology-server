@@ -11,7 +11,7 @@ docker-compose up -d
 
 **3. Importar SnomedIPS en servidor Snowstorm***
 
-Acceder a interfaz Swagger desde http://<ip>:8080/swagger-ui/index.html#/ y ejecuta siguiente request
+3.1 Acceder a interfaz Swagger desde http://<ip>:8080/swagger-ui/index.html#/ y ejecuta siguiente request
 
 ```
 POST /imports
@@ -22,7 +22,7 @@ POST /imports
 }
 ```
 
-El ***request*** anterior una respuesta como la que sigue:
+3.2 El ***request*** anterior una respuesta como la que sigue:
 
 ```
 cache-control: no-cache,no-store,max-age=0,must-revalidate 
@@ -31,16 +31,16 @@ cache-control: no-cache,no-store,max-age=0,must-revalidate
  date: Tue,14 Mar 2023 12:36:07 GMT 
  expires: 0 
  keep-alive: timeout=60 
- location: http://172.27.71.142:8080/imports/c099c519-72c5-479f-a3d0-1ab46950ce03 
+ location: http://172.27.71.142:8080/imports/c099c519-72c5-479f-a3d0-1ab46950ce03
  pragma: no-cache 
  x-content-type-options: nosniff 
  x-frame-options: DENY 
  x-xss-protection: 1; mode=block 
 ```
 
-Copia el UUID generado en la respuesta anterior.
+3.3 Copia el UUID generado en la respuesta anterior.
 
-Desde la consola ejecutar
+3.4 Desde la consola ejecutar. Reemplaza el UUID copiado en el ***request***
 ```
 cd release-snomed-ips/
 
