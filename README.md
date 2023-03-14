@@ -1,4 +1,4 @@
-# snowstorm-ips
+# lacpass-terminology-server
 
 **1. Clona este repositorio**
 
