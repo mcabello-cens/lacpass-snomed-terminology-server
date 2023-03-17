@@ -2,7 +2,7 @@
 
 **1. Requisitos**
 
-- Servidor 2 nucleos 
+- Servidor al menos 2 nucleos 
 - Al menos 8 GB Ram
 - Docker
 - Docker-compose
