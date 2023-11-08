@@ -1,4 +1,4 @@
-# lacpass-terminology-server
+# lacpass-snomed-terminology-server
 
 **1. Requisitos**
 
